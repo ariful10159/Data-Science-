@@ -121,10 +121,24 @@ balls= final.groupby('batsman')['batsman_runs'].count()
 sr = (runs/balls)*100
 print(sr.sort_values(ascending=False).head(3))
 
+
+#Marge : joining two and more dataframe 
+#season most run 
+new_dataframe=data1.merge(data,left_on='match_id',right_on='id')
+print(new_dataframe)
+
+runs= new_dataframe.groupby(['season','batsman'])['batsman_runs'].sum().sort_values(ascending=False).reset_index().drop_duplicates(subset='season',keep='first').sort_values('season')[['season','batsman']]
+print(runs)
+
+#pivot table : example: how many sixes in 18th over 
+
+result13= data1['batsman_runs']==6
+six = data1[result13]
+print(six.shape)
+
+six.pivot_table(index='over',columns='batting_team',values='batsman_runs',aggfunc='count')
+
 '''
-
-
-
 
 
 
