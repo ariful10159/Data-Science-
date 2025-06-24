@@ -1,4 +1,4 @@
-import pandas as 
+import pandas as pd
 
 mydataset = {
   'cars': ["BMW", "Volvo", "Ford"],
