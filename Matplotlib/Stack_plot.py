@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as 
 
 x = [1, 2, 3, 4, 5]  # Match length with 'area'
 area = [1, 2, 3, 4, 5]  # Now both lists have the same length
